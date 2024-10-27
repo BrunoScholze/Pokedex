@@ -1,0 +1,14 @@
+<po-page-default>
+  <div *ngFor="let pokemon of pokemonsList" class="po-md-3">
+    <div class="card d-flex-center po-row">
+      <img 
+        src="https://raw.githubusercontent.com/wellrccity/pokedex-html-js/master/assets/img/pokemons/poke_1.gif" 
+        alt="{{ pokemon.name }}" 
+        class="pokemon-gif" 
+      />
+
+      <span class="po-sm-12">{{ getPokemonIdByUrl(pokemon.url) }}</span>
+      <span class="po-sm-12">{{ pokemon.name }}</span>
+    </div>
+  </div>
+</po-page-default>

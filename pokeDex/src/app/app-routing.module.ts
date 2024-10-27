@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {PokedexListModule} from '/'
+import { PokedexListComponent } from './pokedex-list/pokedex-list.component';
+import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 
 const routes: Routes = [
   {
@@ -10,10 +11,11 @@ const routes: Routes = [
   },
   {
     path: 'app-pokedex-list',
-    loadChildren: () =>
-      import('./pokedex-list/').then(
-        (m) => m.PokedexListModule
-      ),
+    component: PokedexListComponent,
+  },
+  {
+    path: 'app-pokemon-card',
+    component: PokemonCardComponent,
   },
 ];
 
