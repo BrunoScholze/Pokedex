@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PokedexListComponent } from './pokedex-list.component';
-import { PoContainerModule, PoPageModule } from '@po-ui/ng-components';
+import { PoButtonModule, PoContainerModule, PoFieldModule, PoPageModule, PoTagModule } from '@po-ui/ng-components';
 
 @NgModule({
   declarations: [PokedexListComponent],
   imports: [
     CommonModule, 
     PoPageModule,
-    PoContainerModule
+    PoContainerModule,
+    PoTagModule,
+    PoButtonModule,
+    PoFieldModule
     ],
 
   exports: [PokedexListComponent]  

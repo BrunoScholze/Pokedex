@@ -6,11 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PokemonListService {
-  private apiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0';
+  private apiUrlGetAll = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=706';
 
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+    return this.http.get<any>(this.apiUrlGetAll);
+  }
+
+  goTo(id: number): Observable<any> {
+    const apiUrlGoTo = `https://pokeapi.co/api/v2/pokemon/${id}/`;
+    return this.http.get<any>(apiUrlGoTo);
   }
 }

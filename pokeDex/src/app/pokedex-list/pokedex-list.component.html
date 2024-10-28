@@ -1,14 +1,24 @@
 <po-page-default>
-  <div *ngFor="let pokemon of pokemonsList" class="po-md-3">
-    <div class="card d-flex-center po-row">
+  <div class="po-row d-align-items-center">
+    <div class="po-sm-6">
+      <img class="max-size-title" [src]="'https://static.vecteezy.com/system/resources/thumbnails/027/127/591/small_2x/pokemon-logo-pokemon-icon-transparent-free-png.png'" alt="">
+    </div>
+    <div class="po-sm-6 input-container">
+      <po-input class="po-sm-12" p-placeholder="Procure um Pokemon" ([ngModule])="filter" (p-change)="search($event)"></po-input>
+    </div>
+  </div>
+  <div  *ngFor="let pokemon of pokemonsList" class="po-md-3">
+    <div class="card po-mt-3">
+      <span class="po-pt-2 po-pl-2 po-font-text-uppercase white-color po-sm-12">Nº{{ getPokemonIdByUrl(pokemon.url) }}</span>
       <img 
-        src="https://raw.githubusercontent.com/wellrccity/pokedex-html-js/master/assets/img/pokemons/poke_1.gif" 
+        [src]="'https://raw.githubusercontent.com/BrunoScholze/Pokedex/main/pokeDex/src/assets/img/pokemons/poke_' + getPokemonIdByUrl(pokemon.url) + '.gif'" 
         alt="{{ pokemon.name }}" 
-        class="pokemon-gif" 
+        class="pokemon-gif"
       />
-
-      <span class="po-sm-12">{{ getPokemonIdByUrl(pokemon.url) }}</span>
-      <span class="po-sm-12">{{ pokemon.name }}</span>
+      <div class="d-flex-center po-row base">
+        <span class="po-pt-5 po-pb-2 name-font po-sm-12 ">{{ capitalizeFirstLetter(pokemon.name) }}</span>
+      </div>
+     
     </div>
   </div>
 </po-page-default>
