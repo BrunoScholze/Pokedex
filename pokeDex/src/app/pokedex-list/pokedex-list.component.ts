@@ -23,7 +23,6 @@ export class PokedexListComponent {
     const id = Number(urlParts[urlParts.length - 2]); 
     this.idActive = id;
     return id; 
-
   }
 
   getPokemonInfo(id:number){
@@ -42,8 +41,15 @@ export class PokedexListComponent {
     return name.charAt(0).toUpperCase() + name.slice(1);
   }
 
-  search(event: string){
-    console.log(event)
+  search(event: any) {
+    this.filter = event;
+    console.log('te')
+  }
+
+  get filteredPokemons() {
+    return this.pokemonsList.filter(pokemon =>
+      pokemon.name.toLowerCase().includes(this.filter.toLowerCase())
+    );
   }
 
   getAllPokemonList(){
@@ -56,7 +62,4 @@ export class PokedexListComponent {
       }
     );
   }
-
-
-
 }
