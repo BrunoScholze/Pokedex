@@ -11,3 +11,15 @@ po-page-default > po-page > div > po-page-content > div {
 .font-14{
   font-size: 200px;
 }
+
+.d-flex-center{
+  display: flex !important;
+  justify-content: center  !important;
+  align-items: center!important; 
+  text-align: center;
+}
+
+.d-align-items-center{
+  display: flex !important;
+  align-items: center!important; 
+}

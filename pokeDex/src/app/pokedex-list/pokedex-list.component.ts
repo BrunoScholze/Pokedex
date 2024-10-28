@@ -18,13 +18,6 @@ export class PokedexListComponent {
     this.getAllPokemonList();
   }
 
-  getPokemonIdByUrl(url: string ): number {
-    const urlParts = url.split('/'); 
-    const id = Number(urlParts[urlParts.length - 2]); 
-    this.idActive = id;
-    return id; 
-  }
-
   getPokemonInfo(id:number){
     this.pokemonListService.goTo(id).subscribe(
       (data) => {
@@ -35,10 +28,6 @@ export class PokedexListComponent {
         console.error('Erro ao obter a Info do Pokémon:', error);
       }
     );
-  }
-
-  capitalizeFirstLetter(name: string): string {
-    return name.charAt(0).toUpperCase() + name.slice(1);
   }
 
   search(event: any) {
