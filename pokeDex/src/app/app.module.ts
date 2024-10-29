@@ -8,6 +8,7 @@ import { PoFieldModule, PoModule, PoPageModule } from '@po-ui/ng-components';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { PokedexListModule } from './pokedex-list/pokedex-list.module';
+import { PokemonInfoModalModule } from './modal/pokemon-info-modal.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { PokedexListModule } from './pokedex-list/pokedex-list.module';
     AppRoutingModule,
     HttpClientModule,
     PokedexListModule,
+    PokemonInfoModalModule,
     BrowserAnimationsModule,
     FormsModule,
     PoPageModule,

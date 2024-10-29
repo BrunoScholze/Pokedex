@@ -1,5 +1,6 @@
-<div class="card po-mt-3">
+<div class="card po-mt-3" (click)="openPokemonInfoModal()">
   <span class="po-pt-2 po-pl-2 po-font-text-uppercase white-color po-sm-12">Nº{{ getPokemonIdByUrl(pokemon.url) }}</span>
+  <img src="/src//assets/img/ball.png" alt="">
   <img 
     [src]="'https://raw.githubusercontent.com/BrunoScholze/Pokedex/main/pokeDex/src/assets/img/pokemons/poke_' + getPokemonIdByUrl(pokemon.url) + '.gif'" 
     alt="{{ pokemon.name }}" 
@@ -9,3 +10,5 @@
     <span class="po-pt-5 po-pb-2 name-font po-sm-12 ">{{ capitalizeFirstLetter(pokemon.name) }}</span>
   </div>
 </div>
+
+<pokemon-info-modal #pokemonInfoModal></pokemon-info-modal>
