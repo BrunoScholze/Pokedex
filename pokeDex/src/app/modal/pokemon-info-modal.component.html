@@ -1,5 +1,6 @@
 <po-modal #pokemonInfoModal>
-  <div class="modal-content">
+  <div class="modal-content cardSize" *ngIf="pokemonType; else loadingContent"
+  [ngStyle]="{ 'background-color': backgroundColor }">
     <img 
       [src]="'https://raw.githubusercontent.com/BrunoScholze/Pokedex/main/pokeDex/src/assets/img/pokemons/poke_' + getPokemonIdByUrl(pokemon.url) + '.gif'" 
       alt="{{ pokemon.name }}" 
@@ -15,7 +16,7 @@
         <div class="hp-bar">
           <div class="hp-fill"></div>
         </div>
-        <span class="hp-text">75 / 100 HP</span> <!-- Exemplo de texto -->
+        <span class="hp-text">100 / 100 HP</span>
       </div>
 
       <div class="po-row d-flex-center">
@@ -42,4 +43,11 @@
       </div>
     </div>  
   </div>
+
+  <!-- Template para o estado de carregamento -->
+  <ng-template #loadingContent>
+    <div class="loading-container modal-content">
+      <p>Carregando...</p>
+    </div>
+  </ng-template>
 </po-modal>

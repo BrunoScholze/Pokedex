@@ -1,4 +1,4 @@
-import { Component, Input, input, ViewChild } from '@angular/core';
+import { Component, Input, input, OnInit, ViewChild } from '@angular/core';
 import { PoModalComponent } from '@po-ui/ng-components';
 import { Pokemon } from '../model/pokemon';
 import { PokemonListService } from '../service/pokemon-list-service';
@@ -8,7 +8,7 @@ import { PokemonListService } from '../service/pokemon-list-service';
   templateUrl: './pokemon-info-modal.component.html',
   styleUrls: ['./pokemon-info-modal.component.scss']
 })
-export class PokemonInfoModalComponent {
+export class PokemonInfoModalComponent implements OnInit{
   @Input() pokemon!: Pokemon;
   
   @ViewChild('pokemonInfoModal', {
@@ -20,8 +20,12 @@ export class PokemonInfoModalComponent {
   pokemonWeight: number = 0;
   pokemonHeight: number = 0;
   pokemonId: number = 0;
+  backgroundColor: string = '';
 
   constructor(private pokemonListService: PokemonListService){
+  }
+
+  ngOnInit(){
 
   }
 
@@ -47,6 +51,8 @@ export class PokemonInfoModalComponent {
     this.pokemonListService.goTo(id).subscribe(
       (data) => {
         this.pokemonType = data.types.map((typeInfo: any) => typeInfo.type.name);
+        this.backgroundColor = this.getBackgroundColor(this.pokemonType[0]);
+
         this.pokemonHeight = data.height;
         this.pokemonWeight = data.weight;
       },
@@ -92,5 +98,31 @@ export class PokemonInfoModalComponent {
   formatWeight(weight: number): string {
     return (weight / 10).toFixed(1) + 'kg'; // Divide por 10 e formata com uma casa decimal
   }
+
+  getBackgroundColor(type: string) {
+    switch (type) {
+      case 'fire':
+        return 'rgba(255, 100, 0, 0.3)'; // Suave para o tipo fogo
+      case 'water':
+        return 'rgba(0, 100, 255, 0.3)'; // Suave para o tipo água
+      case 'grass':
+        return 'rgba(0, 255, 0, 0.3)'; // Suave para o tipo grama
+      case 'poison':
+        return 'rgba(128, 0, 128, 0.3)'; // Suave para o tipo veneno
+      case 'flying':
+        return 'rgba(135, 206, 250, 0.3)'; // Suave para o tipo voador
+      case 'bug':
+        return 'rgba(150, 200, 50, 0.3)'; // Suave para o tipo inseto
+      case 'electric':
+        return 'rgba(255, 255, 0, 0.3)'; // Suave para o tipo elétrico
+      case 'dragon':
+        return 'rgba(0, 0, 255, 0.3)'; // Suave para o tipo dragão
+      case 'normal':
+        return 'rgba(200, 200, 200, 0.3)'; // Suave para o tipo normal
+      default:
+        return 'rgba(200, 200, 200, 0.3)'; // Cor padrão
+    }
+  }
+  
   
 }
