@@ -30,9 +30,8 @@ ng serve
 
 
 <img width="1680" alt="image" src="https://github.com/user-attachments/assets/6425396a-0e92-4dda-bbb3-17607db50b0e">
-<img width="1680" alt="image" src="https://github.com/user-attachments/assets/8b794a5e-cd06-4849-8ed5-33bc504fccd1">
+![image](https://github.com/user-attachments/assets/2188f948-dbac-4301-96c1-fa0abae7b1ff)
 
-![image](https://github.com/user-attachments/assets/3773bd93-c871-4e72-b9a7-2a150f35ade7)
 
 
 
