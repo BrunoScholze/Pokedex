@@ -16,17 +16,8 @@ Design Responsivo 📱
 
 📥 Instalação
 Clone o repositório:
-bash
-Copiar código
-git clone https://github.com/BrunoScholze/Pokedex.git
-Instale as dependências:
-bash
-Copiar código
 npm install
-Inicie o app:
-bash
-Copiar código
-ng serve
+npm start
 
 
 <img width="1680" alt="image" src="https://github.com/user-attachments/assets/6425396a-0e92-4dda-bbb3-17607db50b0e">
