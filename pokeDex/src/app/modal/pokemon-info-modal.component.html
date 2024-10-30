@@ -1,4 +1,45 @@
-<po-modal 
-  #pokemonInfoModal>
-  
+<po-modal #pokemonInfoModal>
+  <div class="modal-content">
+    <img 
+      [src]="'https://raw.githubusercontent.com/BrunoScholze/Pokedex/main/pokeDex/src/assets/img/pokemons/poke_' + getPokemonIdByUrl(pokemon.url) + '.gif'" 
+      alt="{{ pokemon.name }}" 
+      class="pokemon-gif"
+    />
+    <div class="info-container modal-content">
+      <div class="po-row d-flex-center">
+        <div class="name-font">{{capitalizeFirstLetter(pokemon.name)}}</div>
+        <div class="po-font-text-uppercase gray-color">#{{pokemonId}}</div>
+      </div>
+      
+      <div class="hp-bar-container">
+        <div class="hp-bar">
+          <div class="hp-fill"></div>
+        </div>
+        <span class="hp-text">75 / 100 HP</span> <!-- Exemplo de texto -->
+      </div>
+
+      <div class="po-row d-flex-center">
+        <po-tag
+          *ngFor="let type of pokemonType"
+          class="po-p-1"
+          [p-value]="type"
+          [p-color]="getTagColor(type)">
+        </po-tag>
+      </div>
+      <div class="po-row d-flex-center">
+        <div class="modal-content">
+          <span class="name-font po-pt-2 po-pb-2">Altura</span>
+          <div class="back-grond">
+            <span class="info-font">{{ formatHeight(pokemonHeight) }}</span>
+          </div>
+        </div>
+        <div class="modal-content">
+          <span class="name-font po-pt-2 po-pb-2">Peso</span>
+          <div class="back-grond">
+            <span class="info-font">{{ formatWeight(pokemonWeight) }}</span>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
 </po-modal>

@@ -23,3 +23,30 @@ po-page-default > po-page > div > po-page-content > div {
   display: flex !important;
   align-items: center!important; 
 }
+
+.d-justify-content-center{
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.gray-color{
+  color: #7e7e7e;
+  font-size: 18px !important;
+}
+
+.name-font {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  font-size: 24px; 
+  color: rgb(29, 29, 52);
+}
+
+.info-font {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 20px; 
+  color: rgb(29, 29, 52);
+}
+
+body > app-root > app-pokedex-list > po-page-default > po-page > div > po-page-content > div > div > app-pokemon-card > pokemon-info-modal > po-modal > div > div.po-modal-container.po-pb-2.po-pt-2 > div > div > div.po-modal-body{
+  background-color: red;
+}

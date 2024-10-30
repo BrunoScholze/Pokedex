@@ -18,18 +18,6 @@ export class PokedexListComponent {
     this.getAllPokemonList();
   }
 
-  getPokemonInfo(id:number){
-    this.pokemonListService.goTo(id).subscribe(
-      (data) => {
-        this.pokemonType = data.types; 
-        console.log(this.pokemonType)
-      },
-      (error) => {
-        console.error('Erro ao obter a Info do Pokémon:', error);
-      }
-    );
-  }
-
   search(event: any) {
     this.filter = event;
     console.log('te')
