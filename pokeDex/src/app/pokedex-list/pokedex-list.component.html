@@ -8,7 +8,7 @@
       <po-button class="po-sm-1 po-pt-1" p-kind="primary" p-icon="ph ph-magnifying-glass" (p-click)="search(filter)"></po-button>
     </div>
   </div>
-  <div *ngFor="let pokemon of filteredPokemons" class="po-md-3">
+  <div *ngFor="let pokemon of filteredPokemons" class="po-md-3 po-sm-12">
     <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
   </div>
 </po-page-default>
